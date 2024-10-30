@@ -1,1 +1,1 @@
-# AMS_izziv
+# AMS izziv
