@@ -16,8 +16,7 @@ RUN wget \
 WORKDIR /app
 
 # clone DeepReg
-RUN git clone https://github.com/DeepRegNet/DeepReg.git
-WORKDIR DeepReg
+RUN git clone https://github.com/pogorevcrok2/AMS_izziv.git
 RUN git pull
 
 # install conda env
