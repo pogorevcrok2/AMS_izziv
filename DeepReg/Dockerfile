@@ -4,6 +4,7 @@ FROM tensorflow/tensorflow:2.3.1-gpu
 ENV CONDA_DIR=/root/miniconda3
 ENV PATH=${CONDA_DIR}/bin:${PATH}
 ARG PATH=${CONDA_DIR}/bin:${PATH}
+RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 RUN apt-get update
 RUN apt-get install -y wget git && rm -rf /var/lib/apt/lists/*
 RUN wget \
