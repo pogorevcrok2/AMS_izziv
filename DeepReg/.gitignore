@@ -151,4 +151,4 @@ demos/*/logs_predict
 deepreg_download_temp_dir/
 
 #images
-../Images/
+
