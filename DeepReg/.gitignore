@@ -149,3 +149,6 @@ demos/*/logs_predict
 
 # test folders
 deepreg_download_temp_dir/
+
+#images
+Images/
