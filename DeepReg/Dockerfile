@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.3.1-gpu
+FROM tensorflow/tensorflow:2.6.0-gpu
 
 # install miniconda
 ENV CONDA_DIR=/root/miniconda3
@@ -8,9 +8,9 @@ RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/
 RUN apt-get update
 RUN apt-get install -y wget git && rm -rf /var/lib/apt/lists/*
 
-ENV LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH
-ENV TF_FORCE_GPU_ALLOW_GROWTH=true
-ENV NVIDIA_VISIBLE_DEVICES=all
+#ENV LD_LIBRARY_PATH=/usr/local/cuda-10.1/lib64:$LD_LIBRARY_PATH
+#ENV TF_FORCE_GPU_ALLOW_GROWTH=true
+#ENV NVIDIA_VISIBLE_DEVICES=all
 
 RUN wget \
     https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh \
