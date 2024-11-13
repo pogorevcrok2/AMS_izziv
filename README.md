@@ -1,11 +1,9 @@
-<p align="center">
-    alt="deepreg_logo" title="AMS Izziv" width="200"/>
-</p>
+## AMS izziv 
 <!-- -->
 
 ## Disclaimer 
 This is a student project
-
+<!-- 
 # docker build . -t deepreg -f Dockerfile
 # docker run --name DeepReg1 --privileged=true --gpus all -ti deepreg bash
 
@@ -16,3 +14,4 @@ This is a student project
 
 # pip install pydot
 # apt-get update && apt-get install -y graphviz
+-->
