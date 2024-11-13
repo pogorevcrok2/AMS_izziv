@@ -27,7 +27,7 @@ WORKDIR /app/AMS_izziv/DeepReg
 RUN git pull
 
 # install conda env
-RUN conda env create -f environment.yml \
+RUN conda env create -f environment_cpu.yml \
     && conda init bash \
     && echo "conda activate deepreg" >> /root/.bashrc
 
