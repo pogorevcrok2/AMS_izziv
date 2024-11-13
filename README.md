@@ -3,7 +3,8 @@
 </p>
 <!-- -->
 
-# Disclaimer 
+## Disclaimer 
+This is a student project
 
 # docker build . -t deepreg -f Dockerfile
 # docker run --name DeepReg1 --privileged=true --gpus all -ti deepreg bash
