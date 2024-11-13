@@ -1,4 +1,4 @@
-FROM tensorflow/tensorflow:2.6.0-gpu
+FROM tensorflow/tensorflow:2.10.0-gpu
 
 # install miniconda
 ENV CONDA_DIR=/root/miniconda3
