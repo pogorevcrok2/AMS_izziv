@@ -113,11 +113,11 @@ def move_files_into_correct_path(images_fnames, labels_fnames, path_to_images_an
 if os.path.exists(path_to_images_and_labels):
     # Process images
     move_files_into_correct_path(
-        images_fnames, labels_fnames=None, path_to_images_and_labels=path_to_images_and_labels, path_to_train=path_to_train
+        images_fnames, labels_fnames, path_to_images_and_labels, path_to_train
     )
     # Process labels
     move_files_into_correct_path(
-        images_fnames=None, labels_fnames=labels_fnames, path_to_images_and_labels=path_to_images_and_labels, path_to_train=path_to_train
+        images_fnames, labels_fnames, path_to_images_and_labels, path_to_train
     )
 
 

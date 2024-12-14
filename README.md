@@ -14,4 +14,7 @@ This is a student project
 
 # pip install pydot
 # apt-get update && apt-get install -y graphviz
+# pip uninstall tensorflow-gpu tensorflow
+# pip install tensorflow-gpu==2.10.0
+# python AMS/ams_data.py
 -->
