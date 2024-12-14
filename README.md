@@ -5,7 +5,7 @@
 This is a student project
 <!-- 
 # docker build . -t deepreg -f Dockerfile
-# docker run --name DeepReg1 --privileged=true --gpus all -ti deepreg bash
+# docker run --name DeepReg --privileged=true --gpus all -ti deepreg bash
 
 
 # cd C:\Users\Pogorevc\OneDrive - Univerza v Ljubljani\Magisterij\2. Letnik\AMS_izziv\DeepReg
