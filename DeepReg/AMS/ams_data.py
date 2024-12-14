@@ -111,10 +111,10 @@ def move_files_into_correct_path(images_fnames, labels_fnames, path_to_images_an
 
 if os.path.exists(path_to_images_and_labels):
     move_files_into_correct_path(
-        images_fnames, path_to_images_and_labels, path_to_train, "images", "imagesTr"
+        images_fnames, path_to_images_and_labels, path_to_train, "images"
     )
     move_files_into_correct_path(
-        labels_fnames, path_to_images_and_labels, path_to_train, "labels", "masksTr"
+        labels_fnames, path_to_images_and_labels, path_to_train, "labels"
     )
 
 os.chdir(main_path)
