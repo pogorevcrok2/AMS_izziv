@@ -34,3 +34,5 @@ RUN conda env create -f environment.yml \
 # install deepreg
 ENV CONDA_PIP="${CONDA_DIR}/envs/deepreg/bin/pip"
 RUN ${CONDA_PIP} install -e .
+
+COPY ./AMS /app/AMS_izziv/DeepReg/AMS
