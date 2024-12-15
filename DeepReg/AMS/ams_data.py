@@ -85,7 +85,7 @@ def move_files_into_correct_path(images_fnames, labels_fnames, path_to_images_an
         # Extract case_id and determine if it's fixed or moving
         case_id = file.split("_")[1]  # Extract the second part (e.g., "0002")
         suffix = file.split("_")[-1]  # Extract the suffix (e.g., "0001.nii.gz")
-        if suffix.startswith("0001") or suffix.startswith("0002"):  # Fixed image
+        if suffix.startswith("0001"):# or suffix.startswith("0002"):  # Fixed image
             destination = os.path.join(path_to_train, "fixed_images")
         elif suffix.startswith("0000"):  # Moving image
             destination = os.path.join(path_to_train, "moving_images")
@@ -99,7 +99,7 @@ def move_files_into_correct_path(images_fnames, labels_fnames, path_to_images_an
     for file in labels_fnames:
         case_id = file.split("_")[1]
         suffix = file.split("_")[-1]
-        if suffix.startswith("0001") or suffix.startswith("0002"):  # Fixed label
+        if suffix.startswith("0001"):# or suffix.startswith("0002"):  # Fixed label
             destination = os.path.join(path_to_train, "fixed_labels")
         elif suffix.startswith("0000"):  # Moving label
             destination = os.path.join(path_to_train, "moving_labels")
