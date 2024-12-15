@@ -185,10 +185,15 @@ for folder in os.listdir(path_to_train):
     path_to_folder = os.path.join(path_to_train, folder)
     os.chdir(path_to_folder)
     for file in os.listdir(path_to_folder):
-        if "_insp" in file:
-            new_name = file.replace("_insp", "")
-        elif "_exp" in file:
-            new_name = file.replace("_exp", "")
+        case_id = file.split("_")[1]  # Extract case_id
+        suffix = file.split("_")[-1]  # Extract suffix
+
+        if suffix.startswith("0000"):
+                        new_name = file.replace(suffix,".nii.gz")
+        elif suffix.startswith("0001"):
+                        new_name = file.replace(suffix,".nii.gz")
+        elif suffix.startswith("0002"):
+                        new_name = file.replace(suffix,".nii.gz")
         else:
             continue
         source = file
@@ -201,10 +206,15 @@ for folder in os.listdir(path_to_test):
     path_to_folder = os.path.join(path_to_test, folder)
     os.chdir(path_to_folder)
     for file in os.listdir(path_to_folder):
-        if "_insp" in file:
-            new_name = file.replace("_insp", "")
-        elif "_exp" in file:
-            new_name = file.replace("_exp", "")
+        case_id = file.split("_")[1]  # Extract case_id
+        suffix = file.split("_")[-1]  # Extract suffix
+
+        if suffix.startswith("0000"):
+                        new_name = file.replace(suffix,".nii.gz")
+        elif suffix.startswith("0001"):
+                        new_name = file.replace(suffix,".nii.gz")
+        elif suffix.startswith("0002"):
+                        new_name = file.replace(suffix,".nii.gz")
         else:
             continue
         source = file
@@ -217,10 +227,15 @@ for folder in os.listdir(path_to_valid):
     path_to_folder = os.path.join(path_to_valid, folder)
     os.chdir(path_to_folder)
     for file in os.listdir(path_to_folder):
-        if "_insp" in file:
-            new_name = file.replace("_insp", "")
-        elif "_exp" in file:
-            new_name = file.replace("_exp", "")
+        case_id = file.split("_")[1]  # Extract case_id
+        suffix = file.split("_")[-1]  # Extract suffix
+
+        if suffix.startswith("0000"):
+                        new_name = file.replace(suffix,".nii.gz")
+        elif suffix.startswith("0001"):
+                        new_name = file.replace(suffix,".nii.gz")
+        elif suffix.startswith("0002"):
+                        new_name = file.replace(suffix,".nii.gz")
         else:
             continue
         source = file
