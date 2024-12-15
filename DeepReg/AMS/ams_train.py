@@ -37,7 +37,7 @@ print(
     "\n\n\n\n\n"
 )
 
-log_dir = f"demos/{name}"
+log_dir = f"AMS/{name}"
 exp_name = "logs_train/" + datetime.now().strftime("%Y%m%d-%H%M%S")
 config_path = [f"AMS/{name}.yaml"]
 if args.test:
