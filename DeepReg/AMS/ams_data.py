@@ -105,8 +105,8 @@ if os.path.exists(path_to_test) is not True:
     os.mkdir(os.path.join(path_to_test, "moving_images"))
     os.mkdir(os.path.join(path_to_test, "moving_labels"))
 
-    ratio_of_test_and_valid_samples = 0.2
-
+    ratio_of_test_and_valid_samples = 0.3
+    
     unique_case_names = []
     for file in images_fnames:
         case_name_as_list = file.split("_")[0:2]
@@ -115,23 +115,19 @@ if os.path.exists(path_to_test) is not True:
     unique_case_names = np.unique(unique_case_names)
 
     # Randomly select test and validation cases from unique_case_names
-    #test_and_valid_cases = random.sample(
-        #list(unique_case_names),
-        #int(ratio_of_test_and_valid_samples * len(unique_case_names)),
-    #)
+    test_and_valid_cases = random.sample(
+        list(unique_case_names),
+        int(ratio_of_test_and_valid_samples * len(unique_case_names)),
+    )
     # Split the selected cases into test and validation sets
-    #test_cases = test_and_valid_cases[
-        #0 : int(int(ratio_of_test_and_valid_samples * len(unique_case_names) / 2))
-    #]
-    #valid_cases = test_and_valid_cases[
-        #int(int(ratio_of_test_and_valid_samples * len(unique_case_names) / 2)) + 1 :
-    #]
+    test_cases = test_and_valid_cases[
+        0 : int(int(ratio_of_test_and_valid_samples * len(unique_case_names) / 2))
+    ]
+    valid_cases = test_and_valid_cases[
+        int(int(ratio_of_test_and_valid_samples * len(unique_case_names) / 2)) + 1 :
+    ]
 
-    # Randomly split into test and validation cases without overlap
-    num_test_valid = int(ratio_of_test_and_valid_samples * len(unique_case_names))
-    test_cases = random.sample(unique_case_names, num_test_valid // 2)
-    valid_cases = list(set(unique_case_names) - set(test_cases))
-
+  
     def move_test_cases_into_correct_path(test_cases, path_to_train, path_to_test):
         folder_names = os.listdir(path_to_train)
         os.chdir(path_to_train)
