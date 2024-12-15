@@ -37,4 +37,5 @@ RUN ${CONDA_PIP} install -e .
 
 COPY ./AMS /app/AMS_izziv/DeepReg/AMS
 COPY ./config /app/AMS_izziv/DeepReg/config
+COPY ./environment.yml /app/AMS_izziv/DeepReg/environment.yml
 
