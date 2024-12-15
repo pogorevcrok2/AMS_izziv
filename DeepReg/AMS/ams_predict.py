@@ -43,14 +43,14 @@ print(
 log_dir = f"AMS/{name}"
 exp_name = "logs_predict/" + datetime.now().strftime("%Y%m%d-%H%M%S")
 #ckpt_path = f"{log_dir}/dataset/pretrained/ckpt-8000"
-ckpt_path = f"demos/ams/logs_train/20241215-202218/save/ckpt-1"
+ckpt_path = f"AMS/model_unet_100_epoh/20241215-223943/save/ckpt-100"
 
 config_path = [f"AMS/{name}.yaml"]
 if args.test:
     config_path.append("config/test/ams.yaml")
 
 predict(
-    gpu="0",
+    gpu="0,1",
     gpu_allow_growth=True,
     ckpt_path=ckpt_path,
     split="test",

@@ -20,7 +20,7 @@ parser.add_argument(
     "--full",
     help="Execute the script with full configuration.",
     dest="test",
-    action="store_false",
+    action="store_true",
 )
 parser.set_defaults(test=True)
 args = parser.parse_args()
@@ -44,7 +44,8 @@ if args.test:
     config_path.append("config/test/ams.yaml")
 
 train(
-    gpu="0",
+    gpu="0,1",
+    max_epochs=100,
     config_path=config_path,
     gpu_allow_growth=True,
     ckpt_path="",

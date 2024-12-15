@@ -43,7 +43,6 @@ with zipfile.ZipFile(fname, "r") as zip_ref:
     zip_ref.extractall(data_folder_name)
 
 print("Files unzipped!")
-
 os.remove(fname)
 os.chdir(main_path)
 
