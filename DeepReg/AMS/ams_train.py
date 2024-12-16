@@ -46,7 +46,6 @@ if args.test:
 train(
     gpu="0,1",
     max_epochs=8000,
-    save_period=1000,
     config_path=config_path,
     gpu_allow_growth=True,
     ckpt_path="",
