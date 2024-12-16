@@ -118,32 +118,82 @@ pip install tensorflow-gpu==2.10.0
 
 --- 
 ## Data Preparation
-Explain the steps required to prepare the data for training. Include any preprocessing steps and data splitting.
+To prepare the data for training, follow the steps below. This section outlines the necessary preprocessing steps and data splitting.
 
+### Step 1: Run the `ams_data.py` Script
+Execute the `ams_data.py` script to preprocess and organize the data for training, validation, and testing:
+
+```bash
+python ams_data.py
+```
+1. Downloading the Data:
+The script downloads the ThoraxCBCT dataset if it's not already present.
+
+2. Unzipping and Organizing:
+Extracts the dataset and organizes it into specific folders: train, valid, and test.
+
+3. Data Splitting:
+Splits the data into training, validation, and test sets based on predefined rules or ratios.
+Ensures validation data includes specific cases like 0011, 0012, and 0013.
+
+4. Preprocessing:
+Normalizes the images to ensure consistent intensity ranges.
+Rescales image dimensions as needed for compatibility with the model (e.g., resizing images to match the expected DDF shape).
+
+---
+## Output Structure
+After running the script, the directory structure will look like this:
+```bash
+data/
+├── train/
+│   ├── fixed_images/
+│   ├── fixed_labels/
+│   ├── moving_images/
+│   ├── moving_labels/
+├── valid/
+│   ├── fixed_images/
+│   ├── fixed_labels/
+│   ├── moving_images/
+│   ├── moving_labels/
+├── test/
+│   ├── fixed_images/
+│   ├── fixed_labels/
+│   ├── moving_images/
+│   ├── moving_labels/
+```
+---
 ## Train Commands
-If applicable, list the commands needed to train your model. Provide any necessary explanations or parameters. 
-For train.py script, you should use a parser to set all input parameters. Below is the example, how to run `train.py`:
+To train the model for this project, use the following command:
 
 ```bash
-python train.py --i /path/to/data --o /path/to/models -other /other/parameters....
+python ams_train.py --full
 ```
-
-Make sure to include ` path to data`, `path where to save models` and all user related parameters in parser.
-
+---
 ## Test Commands
-List the commands needed to test your model. Provide any necessary explanations or parameters.
-For test.py script, you should use a parser to set all input parameters. Below is the example, how to run `test.py`:
+To test the model, use the following command:
 
 ```bash
-python test.py --i /path/to/test/data --o /path/to/output -other /other/parameters....
+python ams_predict.py --full
 ```
-
-Make sure to include `path to test data`, `path where to save output` and all user related parameters in parser.
-
 
 ---
 
-### Results from provided code
+### Results and visualization
+
+The following visualizations illustrate the comparison between the moving image, the predicted fixed image, and the fixed image across different test cases. Each column represents:
+
+1. Moving Image - The original image that needs to be registered.
+2. Predicted Fixed Image - The output image after applying the deformation field.
+3. Fixed Image - The target image for the registration task
+
+The evaluation was performed on the AMS Challenge dataset 
+
+![0011](Images/visualisation11_0001.png)
+
+![0012](Images/visualisation12_0001.png)
+
+![0013](Images/visualisation13_0001.png)
+
 ```bash
 case_results [0] [0011_0001<--0011_0000']:
         LogJacDetStd        : 0.02350
