@@ -17,4 +17,8 @@ This is a student project
 # pip uninstall tensorflow-gpu tensorflow
 # pip install tensorflow-gpu==2.10.0
 # python AMS/ams_data.py
+
+#python AMS/ams_data.py
+#python AMS/ams_train.py --full
+#python AMS/ams_predict.py --full
 -->
