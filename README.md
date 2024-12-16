@@ -41,7 +41,8 @@ docker run --rm -it -v "C:\Users\Pogorevc\OneDrive - Univerza v Ljubljani\Magist
 
 
 # AMS IZZIV - final report
-ROK POGOREVC
+## Rok Pogorevc
+--- 
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/DeepRegNet/DeepReg/main/docs/asset/deepreg_logo_purple.svg"
@@ -52,20 +53,29 @@ ROK POGOREVC
 Original code and documentation available at: https://github.com/DeepRegNet/DeepReg
 
 ## Method Explanation
-Describe the method used in your project in your own words. Explain the key concepts and steps involved. If applicable, include figures. 
+The object was to perform deformable image registration on Thorax CBCT images, aligning moving images to fixed images. The results are evaluated using displacement fields (DDF) with specific metrics, including TRE, DSC, and HD95.
 
-## Results
-Include some of *your* results here. Make sure to include aggregated results and any relevant images.
+## Registration Method
+The model uses DDF as the registration method. The primary steps are:
 
-```bash
- aggregated results:
-	LogJacDetStd        : 0.10320 +- 0.00834 | 30%: 0.10965
-	TRE_kp              : 7.69219 +- 2.03832 | 30%: 7.36717
-	TRE_lm              : 8.51688 +- 3.86951 | 30%: 8.24852
-	DSC                 : 0.55044 +- 0.13053 | 30%: 0.49095
-	HD95                : 33.87484 +- 10.90554 | 30%: 23.67392
-```
+### Network Architecture:
 
+### **Backbone:** UNet with three levels of depth.
+Initial Channels: 32, controlling the network size.
+Loss Functions:
+Image Loss: Sum of Squared Differences (SSD) with a weight of 10.0.
+Label Loss: Dice similarity loss at multiple scales.
+Regularization: Bending energy to ensure smooth deformation fields with a weight of 2.5.
+
+### Preprocessing:
+Data augmentation is applied using affine transformations to make the model robust.
+The batch size is set to 4 with shuffling enabled.
+
+### Optimization:
+The Adam optimizer is used with a learning rate of 1e-5.
+Training:
+
+The model is trained for 8000 epochs, saving the weights every 1000 epochs.
 
 ## Docker Information
 Provide information on how to set up and use Docker for this project. Be very specific when writing about Docker installation. Include step-by-step instructions, commands, and any necessary configurations. 
