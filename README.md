@@ -42,7 +42,7 @@ docker run --rm -it -v "C:\Users\Pogorevc\OneDrive - Univerza v Ljubljani\Magist
 
 ### **Disclaimer** 
 This is a student project
-
+---
 <p align="center">
   <img src="https://raw.githubusercontent.com/DeepRegNet/DeepReg/main/docs/asset/deepreg_logo_purple.svg"
     alt="deepreg_logo" title="DeepReg" width="200"/>
@@ -53,7 +53,7 @@ Original code and documentation available at: https://github.com/DeepRegNet/Deep
 
 ## Method Explanation
 The object was to perform deformable image registration on Thorax CBCT images, aligning moving images to fixed images. The results are evaluated using displacement fields (DDF) with specific metrics, including TRE, DSC, and HD95.
-
+---
 ## Registration Method
 The model uses DDF as the registration method. The primary steps are:
 
@@ -82,7 +82,6 @@ Training:
 The model is trained for 8000 epochs, saving the weights every 1000 epochs.
 
 ## Setting Up Docker for the Project
-
 Below are instructions to set up and use Docker for the chalange. 
 ---
 
@@ -117,7 +116,7 @@ pip uninstall tensorflow-gpu tensorflow
 pip install tensorflow-gpu==2.10.0
 ```
 
-
+--- 
 ## Data Preparation
 Explain the steps required to prepare the data for training. Include any preprocessing steps and data splitting.
 
