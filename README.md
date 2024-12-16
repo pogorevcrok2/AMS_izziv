@@ -40,9 +40,8 @@ docker run --rm -it -v "C:\Users\Pogorevc\OneDrive - Univerza v Ljubljani\Magist
 # AMS IZZIV - final report
 ## Rok Pogorevc
 
-## Disclaimer 
+### **Disclaimer** 
 This is a student project
---- 
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/DeepRegNet/DeepReg/main/docs/asset/deepreg_logo_purple.svg"
