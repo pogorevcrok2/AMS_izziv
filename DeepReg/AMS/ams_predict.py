@@ -53,7 +53,7 @@ predict(
     gpu="0,1",
     gpu_allow_growth=True,
     ckpt_path=ckpt_path,
-    split="test",
+    split="valid",
     batch_size=1,
     log_dir=log_dir,
     exp_name=exp_name,
