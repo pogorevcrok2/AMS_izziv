@@ -40,5 +40,5 @@ train:
   optimizer:
     name: "Adam"
     learning_rate: 1.0e-5
-  epochs: 100
-  save_period: 100
+  epochs: 8000
+  save_period: 1000
