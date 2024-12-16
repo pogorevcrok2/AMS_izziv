@@ -1,8 +1,5 @@
-## AMS izziv 
 <!-- -->
 
-## Disclaimer 
-This is a student project
 <!-- 
 # docker build . -t deepreg -f Dockerfile
 # docker run --name DeepReg --privileged=true --gpus all -ti deepreg bash
@@ -42,6 +39,9 @@ docker run --rm -it -v "C:\Users\Pogorevc\OneDrive - Univerza v Ljubljani\Magist
 
 # AMS IZZIV - final report
 ## Rok Pogorevc
+
+## Disclaimer 
+This is a student project
 --- 
 
 <p align="center">
@@ -60,11 +60,16 @@ The model uses DDF as the registration method. The primary steps are:
 
 ### Network Architecture:
 
-### **Backbone:** UNet with three levels of depth.
+### **Backbone:** 
+
+### UNet with three levels of depth.
 Initial Channels: 32, controlling the network size.
+
 Loss Functions:
 Image Loss: Sum of Squared Differences (SSD) with a weight of 10.0.
+
 Label Loss: Dice similarity loss at multiple scales.
+
 Regularization: Bending energy to ensure smooth deformation fields with a weight of 2.5.
 
 ### Preprocessing:
@@ -77,8 +82,42 @@ Training:
 
 The model is trained for 8000 epochs, saving the weights every 1000 epochs.
 
-## Docker Information
-Provide information on how to set up and use Docker for this project. Be very specific when writing about Docker installation. Include step-by-step instructions, commands, and any necessary configurations. 
+## Setting Up Docker for the Project
+
+Below are instructions to set up and use Docker for the chalange. 
+---
+
+### **1. Install Docker**
+If Docker is not already installed on your system
+
+### **2. Build the Docker Image**
+Use the following command to build the Docker image using the provided `Dockerfile`:
+
+```bash
+docker build . -t deepreg -f Dockerfile
+```
+### **3. Run the Docker Container**
+
+```bash
+docker build . -t deepreg -f Dockerfile
+```
+### **4. Install Additional Dependencies Inside the Container**
+
+Once inside the container, execute the following commands to update and install the necessary dependencies:
+
+1. Update the package list and install Graphviz
+```bash
+apt-get update && apt-get install -y graphviz
+```
+2. Uninstall existing TensorFlow versions
+```bash
+pip uninstall tensorflow-gpu tensorflow
+```
+3. Install the required version of TensorFlow
+```bash
+pip install tensorflow-gpu==2.10.0
+```
+
 
 ## Data Preparation
 Explain the steps required to prepare the data for training. Include any preprocessing steps and data splitting.
