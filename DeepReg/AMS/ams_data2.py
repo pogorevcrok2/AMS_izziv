@@ -72,7 +72,7 @@ def move_files_into_correct_path(
     for file in fnames:
         case_id = file.split("_")[1]  # Extract the second part (e.g., "0002")
         suff = file.split("_")[-1]  # Extract the suffix (e.g., "0001.nii.gz")
-        if suff.startswith("0001"):  # Fixed image
+        if suff.startswith("0002"):  # Fixed image
             source = file
             destination = os.path.join(path_to_train, "fixed_" + suffix)
             shutil.move(source, destination)
