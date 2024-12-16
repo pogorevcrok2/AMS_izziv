@@ -128,7 +128,7 @@ if os.path.exists(path_to_test) is not True:
     valid_cases = ["ThoraxCBCT_0011_0000.nii.gz", "ThoraxCBCT_0011_0001.nii.gz","ThoraxCBCT_0011_0002.nii.gz", "ThoraxCBCT_0012_0000.nii.gz", "ThoraxCBCT_0012_0001.nii.gz", "ThoraxCBCT_0012_0002.nii.gz", "ThoraxCBCT_0013_0000.nii.gz", "ThoraxCBCT_0013_0001.nii.gz", "ThoraxCBCT_0013_0002.nii.gz"]
 
     # Remaining cases are test cases
-    valid_cases = ["ThoraxCBCT_0010_0000.nii.gz", "ThoraxCBCT_0010_0001.nii.gz","ThoraxCBCT_0010_0002.nii.gz"]
+    test_cases = ["ThoraxCBCT_0010_0000.nii.gz", "ThoraxCBCT_0010_0001.nii.gz","ThoraxCBCT_0010_0002.nii.gz"]
   
     def move_test_cases_into_correct_path(test_cases, path_to_train, path_to_test):
         folder_names = os.listdir(path_to_train)
